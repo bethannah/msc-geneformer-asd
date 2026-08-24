@@ -1,0 +1,10 @@
+
+__pycache__/
+*.pyc
+
+.vscode/
+Thumbs.db
+
+*.h5ad
+*.pkl
+*.pickle
