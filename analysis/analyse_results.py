@@ -1,11 +1,16 @@
 import pandas as pd
+from pathlib import Path
 
 cell_subtype = "RG"
 
+#Project folders
+project_dir = Path(__file__).resolve().parents[1]
+results_dir = project_dir / "results"
+
 #files
-input_file = f"combined_{cell_subtype}_stats.csv"
-summary_file = f"{cell_subtype}_summary_stats.csv"
-ranked_file = f"{cell_subtype}_ranked_results.csv"
+input_file = results_dir / f"combined_{cell_subtype}_stats.csv"
+summary_file = results_dir / f"{cell_subtype}_summary_stats.csv"
+ranked_file = results_dir / f"{cell_subtype}_ranked_results.csv"
 
 #Load combined results
 df = pd.read_csv(input_file)

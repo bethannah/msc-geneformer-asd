@@ -4,13 +4,13 @@
 import anndata as ad
 import numpy as np
 import pandas as pd
-from scipy import sparse
+from scipy import sparse 
 
 #files
 h5ad_file = "tokenizer_input/vpa_organoids_geneformer_ready.h5ad"
-asd_file = "SFARI_Gene_List.csv"
+asd_file = "../reference_data/SFARI_Gene_List.csv"
 output_file = "non_asd_candidates.csv"
-vpa_file = "vpa_reference_genes.csv"
+vpa_file = "../reference_data/vpa_reference_genes.csv"
 
 #Load data
 adata = ad.read_h5ad(h5ad_file)

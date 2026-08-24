@@ -1,12 +1,18 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 cell_subtype = "RG"
 
+#Project folders
+project_dir = Path(__file__).resolve().parents[1]
+results_dir = project_dir / "results"
+figures_dir = project_dir / "figures"
+
 #files
-input_file = f"combined_{cell_subtype}_stats.csv"
-output_file = f"{cell_subtype}_ASD_vs_nonASD_plot.png"
+input_file = results_dir / f"combined_{cell_subtype}_stats.csv"
+output_file = figures_dir / f"{cell_subtype}_ASD_vs_nonASD_plot.png"
 
 #load results
 df = pd.read_csv(input_file)

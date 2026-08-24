@@ -1,10 +1,13 @@
 from pathlib import Path
 import pandas as pd
 
-#files
-stats_dir = Path("stats/batch_perturbations")
-metadata_file = "gene_metadata.csv"
-output_file = "combined_RG_stats.csv"
+#Project folders
+project_dir = Path(__file__).resolve().parents[1]
+
+#Per-gene perturbation statistics generated on the HPC- this directory isn't included in the Github repository
+stats_dir = project_dir / "stats" / "batch_perturbations"
+metadata_file = project_dir/ "gene_selection" / "gene_metadata.csv"
+output_file = project_dir / "results" / "combined_RG_stats.csv"
 
 results = []
 

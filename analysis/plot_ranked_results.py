@@ -1,11 +1,17 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+from pathlib import Path
 
 cell_subtype = "RG"
 
+#Project folders
+project_dir = Path(__file__).resolve().parents[1]
+results_dir = project_dir / "results"
+figures_dir = project_dir / "figures"
+
 #files
-input_file = f"{cell_subtype}_ranked_results.csv"
-output_file = f"{cell_subtype}_ranked_gene_plot.png"
+input_file = results_dir / f"{cell_subtype}_ranked_results.csv"
+output_file = figures_dir / f"{cell_subtype}_ranked_gene_plot.png"
 
 #load results
 df = pd.read_csv(input_file)
