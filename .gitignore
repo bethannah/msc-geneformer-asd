@@ -1,10 +1,2 @@
-
-__pycache__/
-*.pyc
-
-.vscode/
-Thumbs.db
-
-*.h5ad
-*.pkl
-*.pickle
+# Created by venv; see https://docs.python.org/3/library/venv.html
+*

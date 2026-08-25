@@ -10,6 +10,7 @@ The workflow includes data preprocessing, Geneformer tokenization and UMAP embed
 
 ---
 ## Repository Structure
+```text
 msc-geneformer-asd
 │
 ├── preprocessing/
@@ -50,6 +51,7 @@ msc-geneformer-asd
 │
 └── figures/
     └──analysis figures
+```
 
 ## Analysis Workflow
 1. Data preprocessing
