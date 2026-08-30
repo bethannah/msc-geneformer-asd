@@ -1,0 +1,3 @@
+comparison,group1,group2,group1_n,group2_n,group1_median,group2_median,median_difference,Mann_Whitney_U,p_value,rank_biserial_correlation
+ASD vs non_ASD,ASD,Non-ASD,50,50,-2.8700125824250222e-06,-1.986069608692387e-05,1.6990683504498847e-05,1468.0,0.13376838391331403,0.1744000000000001
+Syndromic vs non-syndromic,Syndromic,Non-Syndromic,25,25,3.1891759935316148e-06,-1.427384137671434e-05,1.7463017370245953e-05,364.0,0.3223963931070317,0.16480000000000006
