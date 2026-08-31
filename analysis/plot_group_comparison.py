@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-cell_subtype = "RG"
-comparison = "syndromic"
+cell_subtype = "IPC"
+comparison = "panel"
 
 #Project folders
 project_dir = Path(__file__).resolve().parents[1]

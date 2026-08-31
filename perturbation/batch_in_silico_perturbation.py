@@ -6,7 +6,7 @@
 
 from geneformer import InSilicoPerturber
 from geneformer import InSilicoPerturberStats
-#from geneformer import EmbExtractor
+from geneformer import EmbExtractor
 from pathlib import Path
 import pandas as pd
 import pickle
@@ -25,26 +25,28 @@ cell_states_to_model={"state_key": "condition",
                       "alt_states": []}
 
 filter_data_dict={
-		"cell_subtype": ["RG"]}
+		"cell_subtype": ["IPC/Newborn ExN"]}
 
-#embex = EmbExtractor(model_type="Pretrained", # if using previously fine-tuned cell classifier model
-                     #num_classes=0,
-                     #filter_data=filter_data_dict,
-                     #max_ncells=1000,
-                     #emb_layer=0,
-                     #summary_stat="exact_mean",
-                     #forward_batch_size=100,
-                     #model_version="V1",  # OF NOTE: SET TO V1 MODEL, PROVIDE V1 MODEL PATH IN SUBSEQUENT CODE
-                    # nproc=1)
+embex = EmbExtractor(model_type="Pretrained", # if using previously fine-tuned cell classifier model
+                     num_classes=0,
+                     filter_data=filter_data_dict,
+                     max_ncells=1000,
+                     emb_layer=0,
+                     summary_stat="exact_mean",
+                     forward_batch_size=100,
+                     model_version="V1",  # OF NOTE: SET TO V1 MODEL, PROVIDE V1 MODEL PATH IN SUBSEQUENT CODE
+                     nproc=1)
 
-#state_embs_dict = embex.get_state_embs(cell_states_to_model,
-                                      # "/d/projects/u/software/geneformer/content/Geneformer/Geneformer-V1-10M", # example 30M fine-tuned model
-                                      # "tokenised_data/vpa_organoids.dataset",
-                                      # "results/state_embeddings",
-                                      # "RG_CTRL_to_VPA_state_embs")
+state_embs_dict = embex.get_state_embs(cell_states_to_model,
+                                      "/d/projects/u/software/geneformer/content/Geneformer/Geneformer-V1-10M", # example 30M fine-tuned model
+                                       "tokenised_data/vpa_organoids.dataset",
+                                       "results/state_embeddings",
+                                       "IPC_CTRL_to_VPA_state_embs")
 
+print("IPC state embeddings created successfully")
+raise SystemExit
 
-with open("results/state_embeddings/RG_CTRL_to_VPA_state_embs.pkl","rb") as file:
+with open("results/state_embeddings/IPC_CTRL_to_VPA_state_embs.pkl","rb") as file:
 	state_embs_dict = pickle.load(file)
 
 # In[ ]:
@@ -95,7 +97,7 @@ for _, row in gene_panel.iterrows():
 			filter_data=filter_data_dict,
 			cell_states_to_model=cell_states_to_model,
 			state_embs_dict=state_embs_dict,
-			max_ncells=1000,
+			max_ncells=None,
 			emb_layer=0,
 			forward_batch_size=100,
 			model_version="V1",

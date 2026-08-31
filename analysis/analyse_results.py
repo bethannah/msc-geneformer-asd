@@ -1,7 +1,7 @@
 import pandas as pd
 from pathlib import Path
 
-cell_subtype = "RG"
+cell_subtype = "IPC"
 
 #Project folders
 project_dir = Path(__file__).resolve().parents[1]

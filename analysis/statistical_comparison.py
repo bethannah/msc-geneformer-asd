@@ -3,7 +3,7 @@ from scipy.stats import mannwhitneyu
 from pathlib import Path
 
 #cell subtype
-cell_subtype = "RG"
+cell_subtype = "IPC"
 
 #project folders
 project_dir = Path(__file__).resolve().parents[1]

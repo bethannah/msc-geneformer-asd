@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from pathlib import Path
 
-cell_subtype = "RG"
+cell_subtype = "IPC"
 
 #Project folders
 project_dir = Path(__file__).resolve().parents[1]
@@ -69,7 +69,7 @@ for _, row in strongest.iterrows():
 #labels and titles
 ax.set_xlabel("Genes ranked by predicted perturbation shift", fontsize=11)
 ax.set_ylabel("Predicted shift towards VPA state", fontsize=11)
-ax.set_title("Ranked Geneformer Perturbation Shifts in Control Radial Glia cells", fontsize=13)
+ax.set_title("Ranked Geneformer Perturbation Shifts in Control IPC/Newborn ExN cells", fontsize=13)
 
 #display small shift values using scientific notation
 ax.ticklabel_format(
