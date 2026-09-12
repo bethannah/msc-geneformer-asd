@@ -83,7 +83,7 @@ ax.axhline(
     linewidth=1)
 
 #labels
-ax.set_xlabel("ASD gene subgroup", fontsize=11)
+ax.set_xlabel("Gene Panel", fontsize=11)
 ax.set_ylabel("Predicted shift towards VPA state", fontsize=11)
 ax.set_title(title, fontsize=13)
 

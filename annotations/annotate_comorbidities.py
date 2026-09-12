@@ -48,3 +48,27 @@ for category, hpo_ids in categories.items():
 
     print(f"\n{category}: {len(genes)} genes")
     print(sorted(genes))
+
+
+#create one annotation row per ASD gene
+annotations = asd[["gene"]].copy()
+
+annotations["hpo_annotated"] = annotations["gene"].isin(hpo_genes)
+
+for category, hpo_ids in categories.items():
+    category_genes = set(
+        hpo_asd.loc[hpo_asd["hpo_id"].isin(hpo_ids),
+                    "gene_symbol"]
+                    )
+
+    annotations[category] = annotations["gene"].apply(
+        lambda gene:(
+            1 if gene in category_genes
+            else 0 if gene in hpo_genes
+            else pd.NA
+        )
+    )
+
+output_file = project_dir / "annotations" / "comorbidity_annotations.csv"
+
+annotations.to_csv(output_file, index=False)
