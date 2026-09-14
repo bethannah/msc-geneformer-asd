@@ -11,7 +11,8 @@ from pathlib import Path
 import pandas as pd
 import pickle
 
-# ### Single gene deletion analysis to test whether ASD- VPA- and control-panel genes shift CTRL radial glia towards the VPA state
+# ### Single gene deletion analysis to test whether ASD- VPA- and control-panel genes shift CTRL radial glia towards the VPA state. This script was adapated from the
+### Geneformer tutorial script
 
 # In[ ]:
 
@@ -44,7 +45,7 @@ state_embs_dict = embex.get_state_embs(cell_states_to_model,
                                        "IPC_CTRL_to_VPA_state_embs")
 
 print("IPC state embeddings created successfully")
-raise SystemExit
+#raise SystemExit
 
 with open("results/state_embeddings/IPC_CTRL_to_VPA_state_embs.pkl","rb") as file:
 	state_embs_dict = pickle.load(file)
